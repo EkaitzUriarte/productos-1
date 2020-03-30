@@ -68,6 +68,21 @@ public class Producto {
 	public void setTallas(String tallas) {
 		this.tallas = tallas;
 	}
+	public Producto() {
+		super();
+	}
+	public Producto(int id, String nombre, int stock, Date fecha_compra, String color, String made_in, Double precio,
+			int descuento) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.stock = stock;
+		this.fecha_compra = fecha_compra;
+		this.color = color;
+		this.made_in = made_in;
+		this.precio = precio;
+		this.descuento = descuento;
+	}
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", stock=" + stock + ", fecha_compra=" + fecha_compra
