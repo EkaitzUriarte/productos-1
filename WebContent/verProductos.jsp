@@ -57,6 +57,8 @@
 						<td>${producto.getPrecio()}</td>
 						<td>${producto.getDescuento()}</td>
 						<td>S,M,L,XL</td>
+						<td><a class="btn btn-primary"
+							href="VerProducto?id=${producto.getId()}">Ver</a></td>
 
 
 					</tr>

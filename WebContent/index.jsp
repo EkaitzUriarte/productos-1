@@ -22,22 +22,21 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 
-<title>Ver Producto</title>
+<title>Index</title>
 </head>
 <body>
 
+	<center>
+		<h1>Productos</h1>
+		<div>
+			<a href="VerProductos">Ver Productos</a>
+		</div>
+		<div>
+			<a href="AbrirFormInsertarProc">Insertar Producto</a>
+		</div>
+	</center>
 
-	<h1>Ver producto</h1>
 
-	<b> Nombre: </b>${producto.getNombre()}
-	<br>
-	<b> Stock: </b>${producto.getStock()}<br>
-	<b>Fecha de la compra:</b>${producto.getFecha_compra()}<br>
-	<b>Color: </b>${producto.getColor()}<br>
-	<b>Precio: </b>${producto.getPrecio()}<br>
-	<b>Descuento: </b>${producto.getDescuento()}<br>
-	
-	
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
