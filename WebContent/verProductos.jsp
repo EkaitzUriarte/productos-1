@@ -56,7 +56,7 @@
 						<td>${producto.getMade_in()}</td>
 						<td>${producto.getPrecio()}</td>
 						<td>${producto.getDescuento()}</td>
-						<td>S,M,L,XL</td>
+						<td>${producto.getTallas()}</td>
 						<td><a class="btn btn-primary"
 							href="VerProducto?id=${producto.getId()}">Ver</a></td>
 

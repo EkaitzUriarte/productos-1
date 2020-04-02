@@ -23,7 +23,7 @@ public class ModeloProducto extends Conector {
 			while (rs.next()) {
 				Producto producto = new Producto(rs.getInt("id"), rs.getString("nombre"), rs.getInt("stock"),
 						rs.getDate("fecha_compra"), rs.getString("color"), rs.getString("made_in"),
-						rs.getDouble("precio"), rs.getInt("descuento"));
+						rs.getDouble("precio"), rs.getInt("descuento"), rs.getString("talla"));
 
 				productos.add(producto);
 			}
@@ -43,7 +43,7 @@ public class ModeloProducto extends Conector {
 			while (rs.next()) {
 				Producto producto = new Producto(rs.getInt("id"), rs.getString("nombre"), rs.getInt("stock"),
 						rs.getDate("fecha_compra"), rs.getString("color"), rs.getString("made_in"),
-						rs.getDouble("precio"), rs.getInt("descuento"));
+						rs.getDouble("precio"), rs.getInt("descuento"), rs.getString("talla"));
 				return producto;
 			}
 		} catch (SQLException e) {
