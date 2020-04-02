@@ -103,31 +103,14 @@
 
           <div class="mb-3">
             <div class="">Tallas</div>
+            <c:forEach items="${tallas }" var="tallas">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaS" value="S">
+              <input class="form-check-input" type="checkbox" name="tallas" id="tallaS${tallas.id }" value="${tallas.id}">
               <label class="form-check-label" for="tallaS">
-                S
+                ${tallas.nombre }
               </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaM" value="M">
-              <label class="form-check-label" for="tallaM">
-                M
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaL" value="L">
-              <label class="form-check-label" for="tallaL">
-                L
-              </label>
-            </div>
-
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="" value="">
-              <label class="form-check-label" for="">
-                Todos de la tabla descuentos
-              </label>
-            </div>
+            </div>            
+             </c:forEach>
           </div>
           <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
