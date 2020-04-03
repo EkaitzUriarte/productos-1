@@ -34,12 +34,13 @@ public class InsertarProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ModeloProducto mPro = new ModeloProducto();		// crear un ojbeto de la clase Modelo Actividad	
+		ModeloProducto mPro=new ModeloProducto();
+		Producto producto=new Producto();	// crear un ojbeto de la clase Modelo Actividad	
 		// Recuperar mediante request.getParameter los valores del formulario
 		Date fecha = null;
 		String nombre=request.getParameter("nombre");
 
-		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 		
 		try {
 			fecha = formato.parse(request.getParameter("fecha"));
@@ -52,13 +53,22 @@ public class InsertarProducto extends HttpServlet {
 		String made_in=request.getParameter("made_in");
 		Double precio=Double.parseDouble(request.getParameter("precio"));
 		int descuento=Integer.parseInt(request.getParameter("descuento"));
+		String[] tallas= request.getParameterValues("tallas");
 		
+		producto.setNombre(nombre);
+        producto.setStock(stock);
+        producto.setFecha_compra(fecha);
+        producto.setColor(color);
+        producto.setMade_in(made_in);
+        producto.setPrecio(precio);
+        producto.setDescuento(descuento);
+        producto.setTallas(tallas);
 		// crear una actividad con los datos del formulario	
 		
 	    //insertar actividad
-		mPro.insert(nombre, stock, fecha, color, made_in, precio, descuento);
-					
-		response.sendRedirect("VerProductos");
+		
+        mPro.insert(producto);
+		response.sendRedirect("VerProductos.jsp");
 	}
 
 	/**

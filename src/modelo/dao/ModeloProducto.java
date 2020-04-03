@@ -53,41 +53,37 @@ public class ModeloProducto extends Conector {
 		return null;
 	}
 
-	public void insert(String nombre, int stock, java.util.Date fecha, String color, String made_in, double precio,
-			int descuento) {
+	public void insert(Producto producto) {         
+		
+	
+	        try {
+	            PreparedStatement pst = super.conexion.prepareStatement(
+	                    "insert into productos (nombre, stock, fecha_compra,color,made_in,precio,descuento,tallas) values (?, ?, ?, ?, ?, ?,?,?)");
+	            pst.setString(1, producto.getNombre());
+	            pst.setInt(2, producto.getStock());
+	            pst.setDate(3, new java.sql.Date(producto.getFecha_compra().getTime()));
+	            pst.setString(4, producto.getColor());
+	            pst.setString(5, producto.getMade_in());
+	            pst.setDouble(6, producto.getPrecio());
+	            pst.setInt(7, producto.getDescuento());
+	            pst.setString(8, producto.getTallas());
 
-		java.sql.Date sqlData = new java.sql.Date(fecha.getTime());
+	            pst.execute();
 
-		try {
-
-			PreparedStatement pstUpdate = conexion
-					.prepareStatement("insert into productos values (?, ?, ?, ?, ?, ?, ?)");
-			pstUpdate.setString(1, nombre);
-			pstUpdate.setInt(2, stock);
-			pstUpdate.setDate(3, sqlData);
-			pstUpdate.setString(4, color);
-			pstUpdate.setString(5, made_in);
-			pstUpdate.setDouble(6, precio);
-			pstUpdate.setInt(7, descuento);
-
-			pstUpdate.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
 
 	public void update(Producto producto) {
 		// TODO implementar
 	}
 
 	public void delete(int id) {
-		
-		
+
 		try {
 
-			PreparedStatement pstUpdate = conexion
-					.prepareStatement("delete from productos where id=?");
+			PreparedStatement pstUpdate = conexion.prepareStatement("delete from productos where id=?");
 			pstUpdate.setInt(1, id);
 
 			pstUpdate.executeUpdate();
@@ -96,7 +92,6 @@ public class ModeloProducto extends Conector {
 			e.printStackTrace();
 		}
 	}
-		
 
 	public ArrayList<Producto> deLaTalla(Talla talla) {
 		// TODO implementar, un poco mas dificil

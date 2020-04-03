@@ -65,9 +65,29 @@ public class Producto {
 	public String getTallas() {
 		return tallas;
 	}
-	public void setTallas(String tallas) {
-		this.tallas = tallas;
-	}
+	public void setTallas(String[] tallas) {
+
+        String cadena = "";
+
+
+
+        if(tallas!=null) {
+
+            for (int i = 0; i < tallas.length-1; i++) {
+
+                cadena = cadena + tallas[i]+",";
+
+            }
+
+            cadena = cadena + tallas[tallas.length-1];
+
+        }
+
+
+
+        this.tallas = cadena;
+
+    }
 	public Producto() {
 		super();
 	}

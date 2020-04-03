@@ -27,7 +27,6 @@
 <body>
 	<h1>Productos</h1>
 
-
 	<table class="table table-striped">
 		<thead>
 			<tr>
