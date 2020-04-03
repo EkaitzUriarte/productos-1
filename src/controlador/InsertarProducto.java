@@ -43,14 +43,14 @@ public class InsertarProducto extends HttpServlet {
 		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 		
 		try {
-			fecha = formato.parse(request.getParameter("fecha"));
+			fecha = formato.parse(request.getParameter("fechaCompra"));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
 		int stock=Integer.parseInt(request.getParameter("stock"));
 		String color=request.getParameter("color");
-		String made_in=request.getParameter("made_in");
+		String made_in=request.getParameter("madein");
 		Double precio=Double.parseDouble(request.getParameter("precio"));
 		int descuento=Integer.parseInt(request.getParameter("descuento"));
 		String[] tallas= request.getParameterValues("tallas");
@@ -68,7 +68,7 @@ public class InsertarProducto extends HttpServlet {
 	    //insertar actividad
 		
         mPro.insert(producto);
-		response.sendRedirect("VerProductos.jsp");
+		response.sendRedirect("verProductos.jsp");
 	}
 
 	/**
