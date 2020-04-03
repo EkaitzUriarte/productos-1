@@ -32,7 +32,7 @@
 			<a href="VerProductos">Ver Productos</a>
 		</div>
 		<div>
-			<a href="AbrirFormInsertarProc">Insertar Producto</a>
+			<a href="AbrirFormCrearProducto">Insertar Producto</a>
 		</div>
 	</center>
 
