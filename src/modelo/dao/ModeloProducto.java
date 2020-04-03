@@ -82,8 +82,21 @@ public class ModeloProducto extends Conector {
 	}
 
 	public void delete(int id) {
-		// TODO implementar
+		
+		
+		try {
+
+			PreparedStatement pstUpdate = conexion
+					.prepareStatement("delete from productos where id=?");
+			pstUpdate.setInt(1, id);
+
+			pstUpdate.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
+		
 
 	public ArrayList<Producto> deLaTalla(Talla talla) {
 		// TODO implementar, un poco mas dificil

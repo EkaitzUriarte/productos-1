@@ -59,6 +59,10 @@
 						<td>${producto.getTallas()}</td>
 						<td><a class="btn btn-primary"
 							href="VerProducto?id=${producto.getId()}">Ver</a></td>
+							<td>							
+							<a class="btn btn-danger"
+							href="EliminarProducto?id=${producto.getId()}">Eliminar</a></td>
+							
 
 
 					</tr>
